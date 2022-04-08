@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Gamers.Web.Models.CategoriaViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Alta",null,new { @class="btn btn-outline-success"})
+</p>
+<table class="table table-striped table-dark table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EdadMinima)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EdadMinima)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "Modificar", new { id = item.Id }, new { @class = "btn btn-outline-warning" }) |
+            @Html.ActionLink("Eliminar", "Baja", new { id = item.Id }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

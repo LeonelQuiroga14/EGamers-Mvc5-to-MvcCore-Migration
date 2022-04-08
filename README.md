@@ -1,2 +1,12 @@
-# Mvc5-to-MvcCore-Migration
-Migrate MVC5 App to Net core MVC
+#Comandos EF
+## Consola de administrador de paqutes
+* Elegir Proyecto predeterminado DataAccess
+
+#Agregar migracion
+##Add-migration "NombreMigracion"
+
+#Actualizar BD  
+##update-database 
+
+#Revertir migracion
+##update-database -targetMigration: "NombredMigracionAnterior"
